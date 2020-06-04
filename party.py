@@ -1,8 +1,7 @@
 import sys
-from datetime import datetime,timezone
+from datetime import datetime, timezone
 
 from sources.sources import *
-
 
 BASE_HTML = """<!doctype html>
 <html lang="en">
@@ -86,7 +85,7 @@ if __name__ == "__main__":
 
     html = nyt.as_html()
 
-    if '--quick' not in sys.argv:
+    if "--quick" not in sys.argv:
         html += npr.as_html()
         html += atlantic.as_html()
         html += theage.as_html()
@@ -95,7 +94,7 @@ if __name__ == "__main__":
 
     html += "<div class='tta'><span class='pre'>Ad</span> Need a cheap VPS host? Try <a href='https://www.vultr.com/?ref=6899304'>Vultr</a> with $100 credit and support this site.</div>"
 
-    if '--quick' not in sys.argv:
+    if "--quick" not in sys.argv:
         html += theverge.as_html()
         html += techmeme.as_html(5)  # techmeme has some _long_ headlines
         html += itnews.as_html()
@@ -104,10 +103,12 @@ if __name__ == "__main__":
 
     html += lobsters.as_html()
 
-    with open('public/index.html', 'w') as out:
+    with open("public/index.html", "w") as out:
         template = BASE_HTML
         template = template.replace("{{content}}", html)
 
         now_utc = datetime.now(timezone.utc)
-        template = template.replace("</footer>", f"<p>Generated on {now_utc.strftime('%b %d at %X')} UTC</p>")
+        template = template.replace(
+            "</footer>", f"<p>Generated on {now_utc.strftime('%b %d at %X')} UTC</p>"
+        )
         out.write(template)
