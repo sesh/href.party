@@ -1,5 +1,7 @@
-from sources.sources import *
 import sys
+from datetime import datetime,timezone
+
+from sources.sources import *
 
 
 BASE_HTML = """<!doctype html>
@@ -13,7 +15,7 @@ BASE_HTML = """<!doctype html>
     <link rel="stylesheet" href="https://cdn.statically.io/gh/sesh/brntn-css-2/master/brntn2.css">
 
     <style>
-        header {
+        header, footer {
             align-items: center;
         }
 
@@ -73,7 +75,7 @@ BASE_HTML = """<!doctype html>
         {{content}}
     </div>
     <footer class="container grid">
-        <p>Sites selected by <a href="https://twitter.com/sesh">@sesh</a>. New sources welcome via <a href="https://github.com/sesh/href.party">Github</a>.
+        <p>Sites selected by <a href="https://twitter.com/sesh">@sesh</a>. New sources welcome via <a href="https://github.com/sesh/href.party">Github</a>.<p>
     </footer>
 </body>
 </html>
@@ -105,4 +107,7 @@ if __name__ == "__main__":
     with open('public/index.html', 'w') as out:
         template = BASE_HTML
         template = template.replace("{{content}}", html)
+
+        now_utc = datetime.now(timezone.utc)
+        template = template.replace("</footer>", f"<p>Generated on {now_utc.strftime('%b %d at %X')} UTC</p>")
         out.write(template)
