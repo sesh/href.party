@@ -32,3 +32,5 @@ jobs:
         build_dir: public
         # Write the given domain name to the CNAME file
         fqdn: href.party
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
