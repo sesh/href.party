@@ -68,3 +68,4 @@ wapo = Source('The Washington Post', 'https://www.washingtonpost.com/', '.headli
 hn500 = Source('Hacker News 500', 'https://hn500.brntn.me', '.col-4-5 a:first-child')
 hn = Source('Hacker News', 'https://news.ycombinator.com/', '.storylink')
 lobsters = Source('Lobsters', 'https://lobste.rs/', '.link')
+techmeme = Source('Techmeme', 'https://techmeme.com/', '.L3,.L2,.L1')

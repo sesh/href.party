@@ -97,7 +97,7 @@ if __name__ == "__main__":
 
     if '--quick' not in sys.argv:
         html += theverge.as_html()
-        html += bloomberg.as_html()
+        html += techmeme.as_html(5)  # techmeme has some _long_ headlines
         html += itnews.as_html()
         html += hn500.as_html()
         html += hn.as_html()
