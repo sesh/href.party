@@ -89,7 +89,7 @@ if __name__ == "__main__":
         html += npr.as_html()
         html += atlantic.as_html()
         html += theage.as_html()
-        html += wapo.as_html()
+        html += abc_au.as_html()
         html += guardian_au.as_html()
 
     html += "<div class='tta'><span class='pre'>Ad</span> Need a cheap VPS host? Try <a href='https://www.vultr.com/?ref=6899304'>Vultr</a> with $100 credit and support this site.</div>"

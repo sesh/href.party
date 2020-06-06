@@ -81,3 +81,4 @@ hn500 = Source("Hacker News 500", "https://hn500.brntn.me", ".col-4-5 a:first-ch
 hn = Source("Hacker News", "https://news.ycombinator.com/", ".storylink")
 lobsters = Source("Lobsters", "https://lobste.rs/", ".link")
 techmeme = Source("Techmeme", "https://techmeme.com/", ".L3,.L2,.L1")
+abc_au = Source("ABC News (Australia)", "https://www.abc.net.au/news/", ".doctype-article h3")
