@@ -63,6 +63,8 @@ BASE_HTML = """<!doctype html>
             margin-right: 0.6em;
             color: #495057;
         }
+
+        body {  background-color: #1d1f21;  color: #c5c8c6;}a:link {  color: #81a2be;}a:visited { color: #546e89}
     </style>
 </head>
 <body>
