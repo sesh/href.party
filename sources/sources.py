@@ -10,7 +10,7 @@ class Source:
         self.selector = selector
         self.skip_articles = skip_articles
         self.articles = []
-        self.exclude = []
+        self.exclude = exclude
 
     def fetch_articles(self):
         response = request(self.url)
@@ -89,3 +89,4 @@ abc_au = Source("ABC News (Australia)", "https://www.abc.net.au/news/", ".doctyp
 
 the_wirecutter = Source("The Wirecutter", "https://www.nytimes.com/wirecutter/everything/", "h3")
 oz_bargain = Source("OzBargain", "https://www.ozbargain.com.au/", "h2", exclude=['expired', 'out of stock'])
+strategist = Source("Strategist", "https://nymag.com/strategist/", ".lede-headline,.feed-link")
