@@ -105,6 +105,11 @@ if __name__ == "__main__":
 
     html += lobsters.as_html()
 
+    html += "<div class='tta'><span class='pre'>Ad</span> Fuck Uber. Give <a href='https://www.vultr.com/?ref=6899304'>Ola</a> a shot for your next ride and support this site.</div>"
+
+    html += the_wirecutter.as_html()
+    html += oz_bargain.as_html()
+
     with open("public/index.html", "w") as out:
         template = BASE_HTML
         template = template.replace("{{content}}", html)

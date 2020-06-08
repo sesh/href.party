@@ -4,12 +4,13 @@ from bs4 import BeautifulSoup
 
 
 class Source:
-    def __init__(self, name, url, selector, skip_articles=0):
+    def __init__(self, name, url, selector, skip_articles=0, exclude=[]):
         self.name = name
         self.url = url
         self.selector = selector
         self.skip_articles = skip_articles
         self.articles = []
+        self.exclude = []
 
     def fetch_articles(self):
         response = request(self.url)
@@ -20,6 +21,9 @@ class Source:
         articles = []
         for el in els:
             headline = el.get_text()
+
+            if any([x in headline for x in self.exclude]):
+                continue
 
             if "href" in el.attrs:
                 link = el
@@ -82,3 +86,6 @@ hn = Source("Hacker News", "https://news.ycombinator.com/", ".storylink")
 lobsters = Source("Lobsters", "https://lobste.rs/", ".link")
 techmeme = Source("Techmeme", "https://techmeme.com/", ".L3,.L2,.L1")
 abc_au = Source("ABC News (Australia)", "https://www.abc.net.au/news/", ".doctype-article h3")
+
+the_wirecutter = Source("The Wirecutter", "https://www.nytimes.com/wirecutter/everything/", "h3")
+oz_bargain = Source("OzBargain", "https://www.ozbargain.com.au/", "h2", exclude=['expired', 'out of stock'])
