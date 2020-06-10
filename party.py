@@ -105,11 +105,17 @@ if __name__ == "__main__":
 
     html += lobsters.as_html()
 
-    html += "<div class='tta'><span class='pre'>Ad</span> I don't like Uber's vibe right now. Give <a href='https://www.ola.com.au'>Ola</a> a shot for your next ride and support this site.</div>"
+    html += "<div class='tta'><span class='pre'>Ad</span> <a href='https://www.morningbrew.com/daily/r/?kid=0b90e868'>Morning Brew</a> is a daily email that covers business and technology news.</div>"
 
     html += the_wirecutter.as_html()
     html += oz_bargain.as_html()
     html += strategist.as_html()
+
+    html += vulture.as_html()
+    html += new_yorker.as_html()
+
+    html += pinboard.as_html()
+
 
     with open("public/index.html", "w") as out:
         template = BASE_HTML

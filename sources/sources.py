@@ -67,11 +67,7 @@ atlantic = Source(
     "https://www.theatlantic.com/world/",
     "main h1,main h2,main h3",
 )
-bloomberg = Source(
-    "Bloomberg Technology",
-    "https://www.bloomberg.com/technology",
-    ".single-story-module__headline-link,h3",
-)
+
 guardian_au = Source(
     "The Guardian (Australia)", "https://www.theguardian.com/au", ".js-headline-text"
 )
@@ -90,3 +86,7 @@ abc_au = Source("ABC News (Australia)", "https://www.abc.net.au/news/", ".doctyp
 the_wirecutter = Source("The Wirecutter", "https://www.nytimes.com/wirecutter/everything/", "h3")
 oz_bargain = Source("OzBargain", "https://www.ozbargain.com.au/", "h2", exclude=['expired', 'out of stock'])
 strategist = Source("Strategist", "https://nymag.com/strategist/", ".lede-headline,.feed-link")
+
+vulture = Source("Vulture", "https://www.vulture.com/", ".link-text,.lede-link")
+new_yorker = Source("The New Yorker", "https://www.newyorker.com/", "h3")
+pinboard = Source("Pinboard Popular", "https://pinboard.in/popular", ".bookmark_title")
