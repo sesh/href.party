@@ -47,19 +47,23 @@ class Source:
         return articles[self.skip_articles :]
 
     def as_html(self, limit=8):
-        if not self.articles:
-            self.fetch_articles()
+        try:
+            if not self.articles:
+                self.fetch_articles()
 
-        s = "<div>"
-        s += f"<h2>{self.name}</h2>"
-        s += "<ul class='list--bare'>"
+            s = "<div>"
+            s += f"<h2>{self.name}</h2>"
+            s += "<ul class='list--bare'>"
 
-        for a in self.articles[:limit]:
-            s += f"<li><a href='{a[1]}'>{a[0]}</a></li>"
+            for a in self.articles[:limit]:
+                s += f"<li><a href='{a[1]}'>{a[0]}</a></li>"
 
-        s += "</ul>"
-        s += "</div>"
-        return s
+            s += "</ul>"
+            s += "</div>"
+            return s
+        except Exception as e:
+            print(f"Failed to lookup {self.name}; {e}")
+            return ""
 
 
 atlantic = Source(
