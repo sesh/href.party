@@ -94,7 +94,7 @@ if __name__ == "__main__":
         html += abc_au.as_html()
         html += guardian_au.as_html()
 
-    html += "<div class='tta'><span class='pre'>Ad</span> Need a cheap VPS host? Try <a href='https://www.vultr.com/?ref=6899304'>Vultr</a> with $100 credit and support this site.</div>"
+    # html += "<div class='tta'><span class='pre'>Ad</span> Need a cheap VPS host? Try <a href='https://www.vultr.com/?ref=6899304'>Vultr</a> with $100 credit and support this site.</div>"
 
     if "--quick" not in sys.argv:
         html += theverge.as_html()
@@ -105,7 +105,7 @@ if __name__ == "__main__":
 
     html += lobsters.as_html()
 
-    html += "<div class='tta'><span class='pre'>Ad</span> <a href='https://www.morningbrew.com/daily/r/?kid=0b90e868'>Morning Brew</a> is a daily email that covers business and technology news.</div>"
+    # html += "<div class='tta'><span class='pre'>Ad</span> <a href='https://www.morningbrew.com/daily/r/?kid=0b90e868'>Morning Brew</a> is a daily email that covers business and technology news.</div>"
 
     html += the_wirecutter.as_html()
     html += oz_bargain.as_html()
