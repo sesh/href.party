@@ -5,7 +5,7 @@ name: Install dependencies and run party
 
 on:
   schedule:
-    - cron: '0,30 * * * *' # every 30 minutes
+    - cron: '0 * * * *' # every 60 minutes
   push:
     branches: [ master ]
 
